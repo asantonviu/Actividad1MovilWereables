@@ -15,3 +15,11 @@
 
 Estudiantes del Máster Universitario en Desarrollo de Aplicaciones y Servicios Web de la Universidad Internacional de Valencia (VIU).  
 Forma parte de la asignatura de Programación Dispositivos Moviles (Wereables) impartida por el profesor Francisco Gomez Arnal, en concreto su Actividad 1. 
+
+## Description  
+
+
+#### Imagenes
+   <img src="https://github.com/asantonviu/Actividad1MovilWereables/issues/1#issue-2999139294" />  
+   <img src="https://github.com/asantonviu/Actividad1MovilWereables/issues/2#issue-2999141316" />  
+   <img src="https://github.com/asantonviu/Actividad1MovilWereables/issues/2#issue-2999141316" />  
