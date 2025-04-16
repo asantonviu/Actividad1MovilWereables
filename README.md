@@ -20,6 +20,6 @@ Forma parte de la asignatura de Programación Dispositivos Moviles (Wereables) i
 
 
 #### Imagenes
-   <img src="https://github.com/asantonviu/Actividad1MovilWereables/issues/1#issue-2999139294" />  
-   <img src="https://github.com/asantonviu/Actividad1MovilWereables/issues/2#issue-2999141316" />  
-   <img src="https://github.com/asantonviu/Actividad1MovilWereables/issues/2#issue-2999141316" />  
+   <img src="https://github.com/user-attachments/assets/e2cd5d61-48cb-4196-974e-3f6c8d0b0a5e" />  
+   <img src="https://github.com/user-attachments/assets/ab86e742-3b56-48eb-b8ad-4194e642e284" />  
+   <img src="https://github.com/user-attachments/assets/60827d86-83c9-4e6b-8b84-33c2cbe50960" />  
