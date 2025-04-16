@@ -26,4 +26,14 @@ interface WeatherAPIService {
         @Query("units") units: String = "metric",
         @Query("appid") apiKey: String
     ): WeatherOverviewResponse
+
+    @GET("data/3.0/onecall/timemachine")
+    suspend fun getHistoricalWeather(
+        @Query("lat") lat: Double,
+        @Query("lon") lon: Double,
+        @Query("lang") lang: String = "es",
+        @Query("units") units: String = "metric",
+        @Query("dt") dt: Long,
+        @Query("appid") apiKey: String
+    ): WeatherHistoricalResponse
 }

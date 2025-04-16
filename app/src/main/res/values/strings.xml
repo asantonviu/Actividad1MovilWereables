@@ -1,12 +1,9 @@
 <resources>
     <string name="app_name">Actividad1</string>
-    <string name="home_screen_title">Prevision Actual</string>
-    <string name="daily_forecast_title">Prevision Diaria</string>
-
-    <string name="date_forecast_title">Prevision Historica</string>
-    <string name="enter_date_hint">Introduce Fecha</string>
-    <string name="fetch_forecast_button">Obtener Pronostico para Fecha</string>
-    <string name="no_forecast_data">Sin Prevision</string>
+    <string name="home_screen_title">Previsión Actual</string>
+    <string name="daily_forecast_title">Previsión Diaria</string>
+    <string name="historyc_forecast_title">Previsión Histórica</string>
+    <string name="selec_fecha">Seleccionar Fecha</string>
 
     <string name="weather_icon">Tiempo</string>
 

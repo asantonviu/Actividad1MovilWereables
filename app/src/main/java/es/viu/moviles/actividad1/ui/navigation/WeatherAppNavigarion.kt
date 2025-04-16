@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import es.viu.moviles.actividad1.models.WeatherAppViewModel
 import es.viu.moviles.actividad1.ui.screen.HomeScreen
 import es.viu.moviles.actividad1.ui.screen.ForecastScreen
+import es.viu.moviles.actividad1.ui.screen.HistoricalForecastScreen
 
 @ExperimentalMaterial3Api
 @Composable
@@ -24,6 +25,9 @@ fun WeatherAppNavigation(
            }
            composable(NavScreen.Prevision7DiasScreen.name) {
                ForecastScreen(viewModel)
+           }
+           composable(NavScreen.HistoricoScreen.name) {
+               HistoricalForecastScreen(viewModel)
            }
        }
 

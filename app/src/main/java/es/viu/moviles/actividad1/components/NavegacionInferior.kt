@@ -11,13 +11,17 @@ import es.viu.moviles.actividad1.models.ItemsBottomNav.*
 import androidx.compose.material3.Text
 import es.viu.moviles.actividad1.ui.navigation.rutaActual
 
+/*
+Clase que representa la barra de navegacion inferior
+ */
 @Composable
 fun NavegacionInferior(
     navController:NavHostController
 ){
     val menu_items= listOf(
           ItemBottomNav1,
-          ItemBottomNav2
+          ItemBottomNav2,
+          ItemBottomNav3
     )
     BottomAppBar {
         NavigationBar(

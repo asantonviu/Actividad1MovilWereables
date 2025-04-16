@@ -1,5 +1,8 @@
 package es.viu.moviles.actividad1.models
 
+
+import android.util.Log
+import es.viu.moviles.actividad1.service.WeatherHistoricalResponse
 import es.viu.moviles.actividad1.service.WeatherOverviewResponse
 import es.viu.moviles.actividad1.service.WeatherResponse
 import java.time.Instant
@@ -46,6 +49,19 @@ fun WeatherResponse.toWeatherDTOList():List<WeatherModel>{
 }
 
 
+fun WeatherHistoricalResponse.toHistoricalWeather(dt:Long): WeatherModel {
+    Log.d("WeatherHistoricalResponse","WeatherHistoricalResponse.toHistoricalWeather dt:"+dt+" Fecha:"+obtenFechaFromDT(dt))
+    return WeatherModel(
+        temperatura = "${data[0].temp}°C",
+        humedad = "${data[0].humidity}%",
+        sensacionTermica = "${data[0].feelsLike}°C",
+        presenciaNubes = "${data[0].clouds}%",
+        presionAtmosferica="${data[0].pressure}hPa",
+        lluvia = "${data[0].rain?.the1H ?: 0} mm/h",
+        fecha = obtenFechaFromDT(dt),
+        icono = "https://openweathermap.org/img/wn/${data[0].weather.firstOrNull()?.icon ?: "01d"}@2x.png"
+    )
+}
 
 //Funcion de extension para mapear respuesta de API (Resumen) a String
 fun WeatherOverviewResponse.toWeatherSumary(): String {

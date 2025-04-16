@@ -2,11 +2,9 @@ package es.viu.moviles.actividad1.service
 
 import kotlinx.serialization.*
 
-import kotlinx.serialization.*
-import kotlinx.serialization.json.*
-import kotlinx.serialization.descriptors.*
-import kotlinx.serialization.encoding.*
-
+/*
+Identifica la respuesta dada por el Servicio ante una peticion de Metereologia Actual y Prevision Futura Metereologico
+ */
 @Serializable
 data class WeatherResponse (
     val lat: Double,
