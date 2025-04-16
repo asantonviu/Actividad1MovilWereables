@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Actividad1</string>
+    <string name="weather_title">Tiempo Actual</string>
+    <string name="history_title">Histórico del Tiempo</string>
+    <string name="enter_location">Introduce una ubicación</string>
+    <string name="search">Buscar</string>
+    <string name="loading">Cargando...</string>
+    <string name="requesting_location_permissions">Solicitando permisos de ubicación...</string>
+    <string name="checking_permissions">Comprobando permisos...</string>
+
+    <string name="weather_icon">Tiempo</string>
+    <string name="daily_forecast_title">Prevision Diaria</string>
+    <string name="date_forecast_title">Prevision Historica</string>
+    <string name="enter_date_hint">Introduce Fecha</string>
+    <string name="fetch_forecast_button">Obtener Pronostico para Fecha</string>
+    <string name="no_forecast_data">Sin Prevision</string>
+
+    <string name="home_screen_title">Prevision Actual</string>
+</resources>
