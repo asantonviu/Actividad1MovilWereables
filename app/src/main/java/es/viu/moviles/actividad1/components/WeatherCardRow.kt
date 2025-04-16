@@ -19,7 +19,7 @@ import es.viu.moviles.actividad1.models.WeatherModel
 fun WeatherCardRow(weatherModel: WeatherModel, cardImageSize:Dp=150.dp,modifier: Modifier = Modifier) {
     Column (modifier=modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center)
+        verticalArrangement = Arrangement.Top)
     {
             WeatherCardImage(weatherModel,cardImageSize,modifier)
             Spacer(modifier = Modifier.height(2.dp))

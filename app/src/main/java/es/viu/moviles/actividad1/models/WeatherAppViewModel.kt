@@ -87,4 +87,14 @@ class WeatherAppViewModel @Inject constructor(
         Log.d("WeatherAppViewModel", "loadLocalidad: $localidad")
         return localidad
     }
+
+    fun loadLocalidad(nombre: String): LatLng {
+        val geocoder = Geocoder(context, Locale.getDefault())
+        val results = geocoder.getFromLocationName(nombre, 1)
+        if (results.isNullOrEmpty()) {
+            throw IllegalArgumentException("No se encontró la ciudad: $nombre")
+        }
+        val loc = results.first()
+        return LatLng(loc.latitude, loc.longitude)
+    }
 }

@@ -17,25 +17,34 @@ import es.viu.moviles.actividad1.R
 import es.viu.moviles.actividad1.components.WeatherCardRow
 import es.viu.moviles.actividad1.components.WeatherScreenTitle
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.Button
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import es.viu.moviles.actividad1.models.WeatherAppViewModel
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.ui.graphics.Shadow
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.geometry.Offset
 import es.viu.moviles.actividad1.components.WeatherSummary
 import es.viu.moviles.actividad1.ui.theme.topAppBar
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
+import kotlinx.coroutines.launch
+import java.util.Locale
 
 
 @ExperimentalMaterial3Api
 @Composable
 fun HomeScreen(weatherAppViewModel: WeatherAppViewModel) {
+    var mostrarInput by remember { mutableStateOf(false) }
+    var textoLocalidad by remember { mutableStateOf("") }
+    var error by remember { mutableStateOf<String?>(null) }
+
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
@@ -59,9 +68,51 @@ fun HomeScreen(weatherAppViewModel: WeatherAppViewModel) {
                     .fillMaxSize()
                     .padding(paddingValues)
                     .padding(horizontal = 16.dp),
-                verticalArrangement = Arrangement.spacedBy(32.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                // Boton para hacer una Seleccion manual
+                // Botón para mostrar el input de ciudad manual
+                Button(onClick = { mostrarInput = !mostrarInput }) {
+                    Text(if (mostrarInput) "Cancelar" else "Cambiar ciudad")
+                }
+
+                // Input de localidad manual
+                if (mostrarInput) {
+                    OutlinedTextField(
+                        value = textoLocalidad,
+                        onValueChange = {
+                            textoLocalidad = it
+                            error = null
+                        },
+                        label = { Text("Introduce una ciudad") },
+                        modifier = Modifier.fillMaxWidth(),
+                        isError = error != null
+                    )
+                    val scope = rememberCoroutineScope()
+                    Button(onClick = {
+                        scope.launch {
+                            try {
+                                val latLng = weatherAppViewModel.loadLocalidad(textoLocalidad)
+                                weatherAppViewModel.establecerUbicacion(latLng)
+                                mostrarInput = false
+                            } catch (e: Exception) {
+                                error = "Error al obtener la ubicación"
+                                Log.e("HomeScreen", "Geocoder error", e)
+                            }
+                        }
+                    }) {
+                        Text("Buscar ubicación")
+                    }
+
+                    if (error != null) {
+                        Text(text = error ?: "", color = Color.Red)
+                    }
+                }
+
+
+
+
                 // WeatherScreenTitle con un borde y padding alrededor
                 weatherAppViewModel.ubicacion.value?.let {
                     Box(
