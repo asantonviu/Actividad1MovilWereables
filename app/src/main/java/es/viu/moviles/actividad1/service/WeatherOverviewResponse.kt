@@ -1,7 +1,9 @@
 package es.viu.moviles.actividad1.service
 
 import kotlinx.serialization.*
-
+/*
+Identifica la respuesta dada por el Servicio ante una peticion de Resumen Metereologico
+ */
 @Serializable
 data class WeatherOverviewResponse (
     val lat: Double,

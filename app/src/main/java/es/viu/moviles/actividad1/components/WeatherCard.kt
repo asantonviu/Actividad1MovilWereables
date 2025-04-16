@@ -11,6 +11,7 @@ import es.viu.moviles.actividad1.models.WeatherModel
 import es.viu.moviles.actividad1.ui.theme.weatherCardTipografy
 
 
+
 @Composable
 fun WeatherCard(weatherModel: WeatherModel, modifier: Modifier=Modifier) {
 

@@ -14,6 +14,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import android.util.Log
+import android.window.SplashScreen
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -32,6 +33,7 @@ import es.viu.moviles.actividad1.ui.navigation.WeatherAppNavigation
 import com.google.android.gms.maps.model.LatLng
 import dagger.hilt.android.AndroidEntryPoint
 import es.viu.moviles.actividad1.models.WeatherAppViewModel
+import es.viu.moviles.actividad1.ui.screen.AppSplashScreen
 import es.viu.moviles.actividad1.ui.theme.WeatherBackgroundGradient
 import kotlinx.coroutines.tasks.await
 
@@ -48,9 +50,14 @@ class MainActivity : ComponentActivity() {
 
         enableEdgeToEdge()
         setContent {
+                // Localizacion obtenida del terminal
             val locationUser = remember { mutableStateOf<LatLng?>(null) }
+                // Indica si la localizacion se ha obtenido
             val locationChecked = remember { mutableStateOf(false) }
+                // Indica si se ha dado el permiso
             val permisoConcedido = remember { mutableStateOf(false) }
+                // Indica si ya se ha mostrado el Splash
+            val navigateToHome = remember { mutableStateOf(false) }
 
             // ViewModel se vincula al scope de la actividad
             val weatherAppViewModel: WeatherAppViewModel by viewModels()
@@ -106,20 +113,14 @@ class MainActivity : ComponentActivity() {
                       .fillMaxSize()
                       .background(WeatherBackgroundGradient)
                 ) {
-                    when {
-                        !locationChecked.value -> {
-                            Log.d("MainActivity", "Esperando ubicación...")
-                        }
-
-                        locationUser.value != null -> {
-                            Log.d("MainActivity", "Navegando con ubicacion")
-                            MainScreen()
-                        }
-
-                        else -> {
-                            Log.d("MainActivity", "Navegando sin ubicacion")
-                            MainScreen()
-                        }
+                    // Mostrar SplashScreen si aún no hemos navegado a la pantalla principal
+                    if (!navigateToHome.value) {
+                        AppSplashScreen(onFinish = {
+                            navigateToHome.value = true // Cambiar a la pantalla principal
+                        })
+                    } else {
+                        // Pantalla principal
+                        MainScreen()
                     }
                 }
 

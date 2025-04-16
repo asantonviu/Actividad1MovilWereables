@@ -1,5 +1,9 @@
 package es.viu.moviles.actividad1.models
 
+/*
+REpresenta el DTO a mostrar
+Es lo que reciben las Screen
+ */
 
 
 

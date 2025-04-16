@@ -23,10 +23,13 @@ import es.viu.moviles.actividad1.components.WeatherCardRow
 import es.viu.moviles.actividad1.components.WeatherScreenTitle
 import es.viu.moviles.actividad1.models.WeatherAppViewModel
 import es.viu.moviles.actividad1.ui.theme.topAppBar
-
+/*
+Representa una la Pantalla de prevision Metereologica
+Muestra la prevision metereologica para la ubicacion actual
+ */
 @ExperimentalMaterial3Api
 @Composable
-fun PrevisionScreen(weatherAppViewModel: WeatherAppViewModel) {
+fun ForecastScreen(weatherAppViewModel: WeatherAppViewModel) {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(

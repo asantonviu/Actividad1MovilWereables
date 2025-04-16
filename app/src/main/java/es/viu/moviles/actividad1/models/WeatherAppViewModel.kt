@@ -18,6 +18,10 @@ import kotlinx.coroutines.flow.asSharedFlow
 import java.util.Locale
 import javax.inject.Inject
 
+/*
+MVVM utilizado por la aplicacion
+ */
+
 @HiltViewModel
 class WeatherAppViewModel @Inject constructor(
     private val repository: WeatherRepository,
@@ -38,7 +42,7 @@ class WeatherAppViewModel @Inject constructor(
     var weatherForecast: State<List<WeatherModel>> = _weatherForecast
 
     // Localidad asocida a geolocalizacion
-    private val _localidad: MutableState<String> = mutableStateOf("No Calculada")
+    private val _localidad: MutableState<String> = mutableStateOf("No Calculada. Seleccione Manualmente")
     var localidad: State<String> = _localidad
 
     //Resumen Mtereologico
@@ -51,7 +55,7 @@ class WeatherAppViewModel @Inject constructor(
         _ubicacion.value = latLng
         loadWeather(latLng)
         loadWeatherSummary(latLng)
-        _localidad.value=loadLocalidad(latLng)?: "No Calculada"
+        _localidad.value=loadLocalidad(latLng)?: "No Calculada. Seleccione Manualmente"
     }
     suspend fun loadWeather(latLng: LatLng){
         val res=repository.fetchCurrentWeatherAndForecast(latLng.latitude,latLng.longitude)
@@ -75,11 +79,7 @@ class WeatherAppViewModel @Inject constructor(
         }
     }
 
-    fun loadPrevision(latLng: LatLng): List<WeatherModel>{
-        //return getPrevision(latLng)
-        return emptyList()
-    }
-
+    // Utiliza Geocoder API para obtener la localidad a partir de la Lat/Lon
     fun loadLocalidad(latLng: LatLng) :String? {
         val geocoder = Geocoder(context, Locale.getDefault())
         val addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1)
@@ -88,6 +88,7 @@ class WeatherAppViewModel @Inject constructor(
         return localidad
     }
 
+    // Utiliza Geocoder API para obtener la Lat/Lon a partir de una localidad
     fun loadLocalidad(nombre: String): LatLng {
         val geocoder = Geocoder(context, Locale.getDefault())
         val results = geocoder.getFromLocationName(nombre, 1)

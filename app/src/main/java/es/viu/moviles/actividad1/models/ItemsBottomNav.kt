@@ -6,6 +6,9 @@ import androidx.compose.material.icons.outlined.WbSunny
 import androidx.compose.ui.graphics.vector.ImageVector
 import es.viu.moviles.actividad1.ui.navigation.NavScreen
 
+/*
+Representa los botones de la barra de navegacion inferior
+ */
 sealed class ItemsBottomNav (
     val icon:ImageVector,
     val titulo:String,

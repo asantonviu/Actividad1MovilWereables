@@ -3,6 +3,9 @@ package es.viu.moviles.actividad1.service
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+/*
+Servicio REST OpenWeatherMap
+ */
 interface WeatherAPIService {
 
     @GET("data/3.0/onecall")

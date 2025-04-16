@@ -7,7 +7,9 @@ import es.viu.moviles.actividad1.service.WeatherOverviewResponse
 import es.viu.moviles.actividad1.service.WeatherResponse
 import javax.inject.Inject
 
-
+/*
+Repositorio que interactua con la API Metereologica
+ */
 class WeatherRepository @Inject constructor (private val apiService: WeatherAPIService) {
 
     suspend fun fetchCurrentWeatherAndForecast(

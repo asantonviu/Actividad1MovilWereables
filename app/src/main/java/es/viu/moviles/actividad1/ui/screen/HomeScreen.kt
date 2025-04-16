@@ -35,9 +35,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import kotlinx.coroutines.launch
-import java.util.Locale
 
-
+/*
+Representa una Pantalla de Inicio
+Muestra, para la ubicacion actual, la prevision actual y un resumen del mismo
+ */
 @ExperimentalMaterial3Api
 @Composable
 fun HomeScreen(weatherAppViewModel: WeatherAppViewModel) {
