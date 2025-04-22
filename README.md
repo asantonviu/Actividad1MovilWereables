@@ -17,12 +17,14 @@ Estudiantes del Máster Universitario en Desarrollo de Aplicaciones y Servicios 
 Forma parte de la asignatura de Programación Dispositivos Moviles (Wereables) impartida por el profesor Francisco Gomez Arnal, en concreto su Actividad 1. 
 
 ## Description 
-La aplicación tiene como propósito mostrar la metereologia, para ello tenemos 3 pantallas:
+La aplicación tiene como propósito mostrar la metereologia, para ello tenemos 4 pantallas:
+  - Pantalla de Splash, muestra un icono.
   - Metereologia actual, es la pantalla por defecto y muestra la metereologia para la ubicacion actual del dispositivo.
     Se permite introducir otra localidad.
   - Prevision metereologica a 7 dias para la ubicación actual.
   - Metereologia a una fecha pasada.
 
+La aplicacion hace uso de la ultima ubicacion del dispositivo por lo que, al arrancar, solicita los permisos necesarios.  
 Utilizamos el API de OpenWeather para obtener los datos.  
 Utilizamos el API de GeoCoder de Google para saber que localidad se corresponde a que coordenadas y viceversa.
 
