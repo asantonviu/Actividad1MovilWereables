@@ -11,7 +11,17 @@ import es.viu.moviles.actividad1.models.WeatherModel
 import es.viu.moviles.actividad1.ui.theme.weatherCardTipografy
 
 
-
+/*
+Clase que representa un componente Tarjeta Metereologica
+Datos a mostrar:
+1) Fecha
+2) Temperatura
+3) Humedad Relativa
+4) Sensación Térmica
+5) Presencia de nubes
+6) Presión Atmosférica
+7) Posibilidad de Lluvia
+ */
 @Composable
 fun WeatherCard(weatherModel: WeatherModel, modifier: Modifier=Modifier) {
 

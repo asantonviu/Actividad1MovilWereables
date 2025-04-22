@@ -8,7 +8,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import es.viu.moviles.actividad1.ui.navigation.NavScreen
 
 /*
-Representa los botones de la barra de navegacion inferior
+Representa los botones de la barra de navegación inferior
  */
 sealed class ItemsBottomNav (
     val icon:ImageVector,

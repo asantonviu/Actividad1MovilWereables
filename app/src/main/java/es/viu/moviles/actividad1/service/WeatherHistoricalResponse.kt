@@ -4,7 +4,7 @@ import kotlinx.serialization.*
 
 
 /*
-Identifica la respuesta dada por el Servicio ante una peticion de Metereologia  Pasada Metereologico
+Identifica la respuesta dada por el Servicio ante una petición de Metereologia con fecha pasada
  */
 
 @Serializable

@@ -17,7 +17,6 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.datetime.Clock
 import kotlinx.datetime.DateTimePeriod
-import kotlinx.datetime.DateTimeUnit
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.minus
 import java.time.Instant
@@ -26,6 +25,18 @@ import javax.inject.Inject
 
 /*
 MVVM utilizado por la aplicacion
+Hemos decidido utilizar un mismo MVVM para todas las ventanas de la aplicación por estos motivos:
+1) La aplicacion es pequeña y el contexto es muy concreto
+2) Compartir datos sin duplicarlos
+   Varias pantallas necesitan la misma información, por lo que mantenemos el estado centralizado en un solo ViewModel.
+   No duplicamos lógica de carga ni de actualización ni de datos.
+3) Persistencia del Estado entre pantallas
+   El ViewModel sobrevive a cambios de pantalla (y recomposiciones internas).
+   Al navegar de una pantalla a otra, los datos no se recargan ni se pierden.
+4) Sincronización fácil
+   Al actualizar algo en el ViewModel (por ejemplo, cambias de ciudad o fecha), todas las pantallas que observan el ViewModel se actualizan automáticamente.
+5) Menor consumo de recursos
+6) Simplificación del Código
  */
 
 @HiltViewModel

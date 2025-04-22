@@ -22,7 +22,10 @@ import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 
 
-
+/*
+Representa una la Pantalla de prevision Metereologica pasada
+Muestra la prevision metereologica para la ubicación actual en una fecha pasada
+ */
 @ExperimentalMaterial3Api
 @Composable
 fun HistoricalForecastScreen(weatherAppViewModel: WeatherAppViewModel) {

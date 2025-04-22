@@ -3,7 +3,7 @@ package es.viu.moviles.actividad1.service
 import kotlinx.serialization.*
 
 /*
-Identifica la respuesta dada por el Servicio ante una peticion de Metereologia Actual y Prevision Futura Metereologico
+Identifica la respuesta dada por el Servicio ante una petición de Metereologia Actual y Prevision Futura
  */
 @Serializable
 data class WeatherResponse (

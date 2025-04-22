@@ -39,6 +39,7 @@ import kotlinx.coroutines.launch
 /*
 Representa una Pantalla de Inicio
 Muestra, para la ubicacion actual, la prevision actual y un resumen del mismo
+Permite seleccionar otra localidad
  */
 @ExperimentalMaterial3Api
 @Composable

@@ -25,7 +25,7 @@ import es.viu.moviles.actividad1.models.WeatherAppViewModel
 import es.viu.moviles.actividad1.ui.theme.topAppBar
 /*
 Representa una la Pantalla de prevision Metereologica
-Muestra la prevision metereologica para la ubicacion actual
+Muestra la prevision metereologica para la ubicación actual
  */
 @ExperimentalMaterial3Api
 @Composable

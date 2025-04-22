@@ -1,6 +1,5 @@
 package es.viu.moviles.actividad1.components
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
@@ -11,10 +10,13 @@ import coil.compose.AsyncImage
 import es.viu.moviles.actividad1.R
 import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
-import es.viu.moviles.actividad1.models.WeatherAppViewModel
 import es.viu.moviles.actividad1.models.WeatherModel
+
+/*
+Clase que representa un componente Imagen Metereologica
+La imagen representa la metereologia
+ */
 
 @Composable
 fun WeatherCardImage(weatherModel: WeatherModel, cardImageSize: Dp, modifier: Modifier = Modifier) {

@@ -12,7 +12,10 @@ import androidx.compose.material3.Text
 import es.viu.moviles.actividad1.ui.navigation.rutaActual
 
 /*
-Clase que representa la barra de navegacion inferior
+Clase que representa la barra de navegación inferior que contendrá 3 botones de navegación
+ 1) Metereologia Actual. Valor seleccionado por defecto
+ 2) Previsión a 7 dias
+ 3) Historico. Por defecto el dia de ayer
  */
 @Composable
 fun NavegacionInferior(

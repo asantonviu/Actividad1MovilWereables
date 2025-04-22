@@ -12,7 +12,9 @@ import javax.inject.Inject
 Repositorio que interactua con la API Metereologica
  */
 class WeatherRepository @Inject constructor (private val apiService: WeatherAPIService) {
-
+    /*
+    Obtiene, para una latitud y longitud concreta, la metereologia actual y una prevision a 7 dias
+    */
     suspend fun fetchCurrentWeatherAndForecast(
         lat: Double,
         lon: Double
@@ -25,6 +27,9 @@ class WeatherRepository @Inject constructor (private val apiService: WeatherAPIS
         return APIResult.Success(response)
     }
 
+    /*
+Obtiene el resumen metereologico actual  para una latitud y longitud concreta
+ */
     suspend fun fetchCurrentWeatherOverview(
         lat: Double,
         lon: Double
@@ -37,6 +42,9 @@ class WeatherRepository @Inject constructor (private val apiService: WeatherAPIS
         return APIResult.Success(response)
     }
 
+    /*
+    Obtiene la metereologia en una fecha pasada para una latitud y longitud concreta
+     */
     suspend fun fetchHistoricalWeather(
         lat: Double,
         lon: Double,

@@ -11,7 +11,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import es.viu.moviles.actividad1.models.WeatherModel
 
-
+/*
+Clase que representa una fila Metereologica
+ */
 @Composable
 fun WeatherCardRow(weatherModel: WeatherModel, cardImageSize:Dp=150.dp,modifier: Modifier = Modifier) {
     Column (modifier=modifier,

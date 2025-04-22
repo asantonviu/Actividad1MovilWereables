@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter
 Funciones de extension sobre las respuestas de la API para obtener los DTO,complejos o primitivos
  */
 
-//Funcion de extension para mapear respuesta de API a Modelo Interno (DTO)
+
 fun WeatherResponse.toWeatherDTO(): WeatherModel {
     return WeatherModel(
         temperatura = "${current.temp}°C",

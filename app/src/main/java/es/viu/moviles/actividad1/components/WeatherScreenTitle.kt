@@ -18,7 +18,10 @@ import com.google.android.gms.maps.model.LatLng
 import es.viu.moviles.actividad1.ui.theme.weatherScreenTitleTipografy
 
 
-
+/*
+Clase que representa un componente Titulo
+Esta formado por la localidad, su latitud y su longitud
+ */
 @Composable
 fun WeatherScreenTitle(localidad:String,latLng: LatLng, modifier: Modifier = Modifier) {
     Row (modifier = modifier,
