@@ -16,8 +16,18 @@
 Estudiantes del Máster Universitario en Desarrollo de Aplicaciones y Servicios Web de la Universidad Internacional de Valencia (VIU).  
 Forma parte de la asignatura de Programación Dispositivos Moviles (Wereables) impartida por el profesor Francisco Gomez Arnal, en concreto su Actividad 1. 
 
-## Description 
-La aplicación tiene como propósito mostrar la metereologia, para ello tenemos 4 pantallas:
+## Description  
+Esta aplicación nace con el objetivo de ofrecer a los usuarios una forma rápida, intuitiva y precisa de consultar el clima actual y el histórico en su ubicación o en cualquier ciudad de interés.  
+La motivación principal es facilitar la toma de decisiones cotidianas (como planificar viajes, actividades al aire libre o gestión de recursos) mediante información meteorológica fiable, accesible desde cualquier dispositivo móvil.  
+Los objetivos principales son:  
+  - Proporcionar información meteorológica en tiempo real basada en la localización del usuario.
+  - Permitir la consulta del historial climático seleccionando fechas pasadas.
+  - Ofrecer una experiencia de usuario sencilla y fluida, con navegación intuitiva y actualización automática de los datos.
+  - Utilizar las mejores prácticas de desarrollo móvil moderno (Jetpack Compose, arquitectura MVVM, inyección de dependencias con Hilt).
+  - Optimizar el consumo de recursos del dispositivo, minimizando llamadas innecesarias a la API y reutilizando datos mediante un ModelViewViewModel compartido.
+
+
+Para ello la aplicación dispone de 4 pantallas:
   - Pantalla de Splash, muestra un icono.
   - Metereologia actual, es la pantalla por defecto y muestra la metereologia para la ubicacion actual del dispositivo.
     Se permite introducir otra localidad.
